@@ -349,6 +349,9 @@ main {
   color: var(--text-primary);
   font-family: inherit;
   transition: border-color 0.18s, background 0.18s;
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
 }
 .stack-input::placeholder { color: var(--text-tertiary); }
 .stack-input:focus {
@@ -380,7 +383,7 @@ main {
 .stack-add-btn:active { transform: translateY(0) scale(0.97); }
 
 /* ====== SEARCH AUTOCOMPLETE — appears below the form when typing in Name ====== */
-.stack-name-wrap { position: relative; }
+.stack-name-wrap { position: relative; min-width: 0; }
 
 .stack-search-results {
   position: absolute;
