@@ -109,8 +109,21 @@
   background: linear-gradient(180deg, rgba(125, 211, 252, 0.65), rgba(110, 231, 183, 0.65));
 }
 
-@media (max-width: 480px) {
-  .topbar { padding-left: 10px; padding-right: 10px; gap: 4px; }
+@media (max-width: 520px) {
+  .topbar {
+    flex-wrap: wrap;
+    gap: 6px 4px;           /* row-gap 6px | column-gap 4px */
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  /* flex-basis 30% → exactly 3 items fit per row (3×30%=90%<100%,
+     4×30%=120%>100%), so Goals/Stack/Water land on row 1 and
+     Gym/Finance share row 2 and grow to fill it equally. */
+  .topbar-pill,
+  .topbar-water-wrap {
+    flex: 1 1 30%;
+    min-width: 0;
+  }
   .topbar-pill, .topbar-water-pill { padding: 7px 9px; gap: 5px; }
   .topbar-pill-label { font-size: 9px; letter-spacing: 0.10em; }
   .topbar-pill-count { font-size: 11px; }
